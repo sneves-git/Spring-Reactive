@@ -12,57 +12,43 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.sql.Date;
+import java.util.Calendar;
+
 @RestController
-@RequestMapping(value = "/student/create")
+@RequestMapping(value = "/student")
 @RequiredArgsConstructor
 @Slf4j
 public class StudentController {
-    @Autowired
     private final StudentRepository studentRepository;
-    /*
-    @GetMapping
-    public Flux<Student> getAll() {
-        return studentRepository.findAll();
-    }
-*/
-    //Create Student
+
     @PostMapping
     public Mono<Student> createStudent(@RequestBody Student student) {
+        System.out.println(student.getBirth_date());
         return this.studentRepository.save(student);
-    }/*
-    public Mono<Student> createStudent(final Student student){
-        return this.studentRepository.save(student);
-    }*/
+    }
 
     //Falta "Create Relationship"
 
-    //Read all Students
+    @GetMapping(value = "/all")
     public Flux<Student> getAllStudents(){
         return this.studentRepository.findAll();
     }
 
-    //Read specific Student
-    public Mono<Student> getStudentById(int studentId){
-        return this.studentRepository.findById((long)studentId);
+    @GetMapping(value = "/{id}")
+    public Mono<Student> getStudentById(@PathVariable int id){
+        return this.studentRepository.findById((long)id);
     }
 
-    //Update specific Student
-    public Mono<Student> updateStudent(int studentId, final Mono<Student> studentMono){
-        return this.studentRepository.findById((long) studentId)
-                .flatMap(s -> studentMono.map(u -> {
-                    s.setName(u.getName());
-                    s.setBirth_date(u.getBirth_date());
-                    s.setCompleted_credits(u.getCompleted_credits());
-                    s.setAverage_grade(u.getAverage_grade());
-                    return s;
-                }))
-                .flatMap(s -> this.studentRepository.save(s));
+    @PutMapping
+    public Mono<Student> updateStudent(@RequestBody Student student){
+        return studentRepository
+                .findById((long) student.getId())
+                .flatMap(studentResult -> studentRepository.save(student));
     }
 
-    //Delete Student
-    public Mono<Void> deleteStudent(final int id){
-        return this.studentRepository.deleteById((long)id);
+    @DeleteMapping
+    public Mono<Void> deleteStudent(@RequestBody Student student) {
+        return studentRepository.deleteById((long)student.getId());
     }
-
-
 }

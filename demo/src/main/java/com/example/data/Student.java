@@ -1,5 +1,6 @@
 package com.example.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import org.springframework.data.annotation.Id;
 
@@ -11,14 +12,14 @@ public class Student {
     private Integer id;
 
     private String name;
-    private Date birth_date;
+    private String birth_date;
     private Integer completed_credits;
     private Float average_grade;
 
     public Student() {
     }
 
-    public Student(Integer id, String name, Date birth_date, Integer completed_credits, Float average_grade) {
+    public Student(Integer id, String name, String birth_date, Integer completed_credits, Float average_grade) {
         this.id = id;
         this.name = name;
         this.birth_date = birth_date;
@@ -26,14 +27,14 @@ public class Student {
         this.average_grade = average_grade;
     }
 
-    public Student(String name, Date birth_date, Integer completed_credits, Float average_grade) {
+    public Student(String name, String birth_date, Integer completed_credits, Float average_grade) {
         this.name = name;
         this.birth_date = birth_date;
         this.completed_credits = completed_credits;
         this.average_grade = average_grade;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -49,11 +50,11 @@ public class Student {
         this.name = name;
     }
 
-    public Date getBirth_date() {
+    public String getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(String birth_date) {
         this.birth_date = birth_date;
     }
 
