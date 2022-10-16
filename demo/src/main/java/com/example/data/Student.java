@@ -1,9 +1,11 @@
 package com.example.data;
 
+import lombok.Builder;
 import org.springframework.data.annotation.Id;
 
 import java.sql.Date;
 
+@Builder
 public class Student {
     @Id
     private Integer id;
@@ -18,6 +20,13 @@ public class Student {
 
     public Student(Integer id, String name, Date birth_date, Integer completed_credits, Float average_grade) {
         this.id = id;
+        this.name = name;
+        this.birth_date = birth_date;
+        this.completed_credits = completed_credits;
+        this.average_grade = average_grade;
+    }
+
+    public Student(String name, Date birth_date, Integer completed_credits, Float average_grade) {
         this.name = name;
         this.birth_date = birth_date;
         this.completed_credits = completed_credits;

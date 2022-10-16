@@ -1,7 +1,9 @@
 package com.example.data;
 
+import lombok.Builder;
 import org.springframework.data.annotation.Id;
 
+@Builder
 public class Teacher {
     @Id
     private Integer id;
@@ -13,6 +15,10 @@ public class Teacher {
 
     public Teacher(Integer id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Teacher(String name) {
         this.name = name;
     }
 

@@ -1,23 +1,38 @@
-package com.example.demo.services;
+package com.example.demo.controllers;
+
 
 import com.example.data.Student;
+import com.example.demo.dto.StudentDto;
 import com.example.demo.repositories.StudentRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import org.springframework.web.bind.annotation.RequestBody;
 
-@Service
-public class StudentService {
-/*
-    private StudentRepository studentRepository;
-
-    public StudentService() {}
-
+@RestController
+@RequestMapping(value = "/student/create")
+@RequiredArgsConstructor
+@Slf4j
+public class StudentController {
+    @Autowired
+    private final StudentRepository studentRepository;
+    /*
+    @GetMapping
+    public Flux<Student> getAll() {
+        return studentRepository.findAll();
+    }
+*/
     //Create Student
+    @PostMapping
+    public Mono<Student> createStudent(@RequestBody Student student) {
+        return this.studentRepository.save(student);
+    }/*
     public Mono<Student> createStudent(final Student student){
         return this.studentRepository.save(student);
-    }
+    }*/
 
     //Falta "Create Relationship"
 
@@ -49,12 +64,5 @@ public class StudentService {
         return this.studentRepository.deleteById((long)id);
     }
 
-    // Falta "Delete relationship"
 
-    // Falta "Read relationship" - .	This service	can	only	return	the	identifiers	of	some	student's
-    //professors,	not	the	entire	professor data. I.e.,	students	should	not	create	a	service
-    //that	 immediately	 provides,	 say,	 a	 student	 with	 all	 data	 of	 all	 the	 student’s
-    //professors.
-
- */
 }
