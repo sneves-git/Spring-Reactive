@@ -1,6 +1,7 @@
 package com.example.demo.repositories;
 
 import com.example.data.Student;
+import com.example.data.Teacher;
 import com.example.demo.dto.StudentDto;
 import org.springframework.data.r2dbc.repository.R2dbcRepository;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
@@ -9,5 +10,6 @@ import reactor.core.publisher.Mono;
 
 
 @Repository
-public interface StudentRepository extends R2dbcRepository<Student,Long> {
+public interface StudentRepository extends ReactiveCrudRepository<Student,Long> {
+
 }

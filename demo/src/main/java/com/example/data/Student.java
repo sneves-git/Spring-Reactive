@@ -2,11 +2,12 @@ package com.example.data;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import java.sql.Date;
 
-@Builder
+@Data
 public class Student {
     @Id
     private Integer id;

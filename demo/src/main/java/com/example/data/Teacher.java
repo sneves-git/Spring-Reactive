@@ -1,9 +1,10 @@
 package com.example.data;
 
 import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-@Builder
+@Data
 public class Teacher {
     @Id
     private Integer id;
