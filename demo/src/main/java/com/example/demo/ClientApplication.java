@@ -8,11 +8,16 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.Disposable;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
+import java.util.Date;
 
-import static java.lang.Math.round;
+import static java.lang.Math.*;
 
 @SpringBootApplication
 public class ClientApplication {
@@ -76,7 +81,7 @@ public class ClientApplication {
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
-                    .filter(v -> v.getCompleted_credits()<180)
+                    .filter(v -> v.getCompleted_credits() < 180)
                     .count()
                     .subscribe(System.out::println);
         };
@@ -113,21 +118,89 @@ public class ClientApplication {
                     .subscribe(cr -> System.out.println("-> Name: "+ cr.getName() + " || Completed Courses:" + cr.getCompleted_credits()/6));
         };
     }
-    /*
+
     // 6. Average and standard deviations of all student grades.
     @Bean
     CommandLineRunner GetAverageAndStandardDeviationFromGrades(WebClient client) {
         System.out.println("===== Average and Standard Deviation From Students Grades =====");
-        Integer mean = 0;
+        Flux<Student> fluxStream =  client.get().uri("/student/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Student.class);
+
+        Mono<Long> count = fluxStream.count();
+
+        Mono<Float> sum = fluxStream.map(Student::getAverage_grade)
+                                        .reduce(Float::sum);
+        float mean = sum.block() / count.block();
+
+
+        Mono<Double> sd_sum = fluxStream.map(a -> pow(abs(a.getAverage_grade() - mean), 2))
+                                    .reduce(Double::sum);
+        Double sd = sqrt(sd_sum.block() / count.block());
+
+
+        return args -> {
+            System.out.println("MEAN: "+ mean + "  Standard Deviation: " + sd);
+        };
+    }
+
+    // 7. Average and standard deviations of students who have finished their graduation
+    //(with 180 credits).
+    @Bean
+    CommandLineRunner GetAverageAndStandardDeviationForFinishedGraduation(WebClient client) {
+        System.out.println("===== Average and Standard Deviation of Students Who Have Finished Their Graduation =====");
+        Flux<Student> fluxStream =  client.get().uri("/student/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Student.class)
+                .filter(s -> s.getCompleted_credits() >= 180);
+
+        Mono<Long> count = fluxStream.count();
+
+        Mono<Float> sum = fluxStream.map(Student::getAverage_grade)
+                .reduce(Float::sum);
+        float mean = sum.block() / count.block();
+
+
+        Mono<Double> sd_sum = fluxStream.map(a -> pow(abs(a.getAverage_grade() - mean), 2))
+                .reduce(Double::sum);
+
+        Double sd = sqrt(sd_sum.block() / count.block());
+
+
+        return args -> {
+            System.out.println("-> MEAN: "+ mean + "  Standard Deviation: " + sd);
+        };
+    }
+    // 8. The name of the eldest student.
+    @Bean
+    CommandLineRunner GetTheEldestStudent(WebClient client) {
+        System.out.println("===== Name Of the Eldest Student =====");
         return args -> {
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
-                    .reduce( (a,b) -> a.getAverage_grade()+ b.getAverage_grade())
-                    .subscribe();
+                    .reduce((a,b) -> {
+                        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+                                Date date_a = null;
+                                Date date_b = null;
+                                try {
+                                    date_a = sf.parse(a.getBirth_date());
+                                    System.out.println("1.Nome: "+ a.getName() + "data: "+ date_a);
+                                    date_b = sf.parse(b.getBirth_date());
+                                    System.out.println("2.Nome: "+ b.getName() + "data: "+date_b);
+
+                                } catch (ParseException e) {
+                                    throw new RuntimeException(e);
+                                }
+                        return date_a.compareTo(date_b) > 0 ? b : a;
+                    }
+                    )
+                    .subscribe(s -> System.out.println("-...... Name:" + s.getName()));
         };
-    }*/
+    }
 
 
 }
