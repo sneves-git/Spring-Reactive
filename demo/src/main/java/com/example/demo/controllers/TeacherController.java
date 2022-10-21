@@ -1,11 +1,9 @@
 package com.example.demo.controllers;
 
-import com.example.data.Student;
 import com.example.data.Teacher;
 import com.example.demo.repositories.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -21,8 +19,6 @@ public class TeacherController {
     public Mono<Teacher> createTeacher(@RequestBody Teacher teacher) {
         return this.teacherRepository.save(teacher);
     }
-
-    //Falta "Create Relationship"
 
     @GetMapping(value = "/all")
     public Flux<Teacher> getAllTeachers(){
@@ -41,8 +37,13 @@ public class TeacherController {
                 .flatMap(studentResult -> teacherRepository.save(teacher));
     }
 
-    @DeleteMapping
-    public Mono<Void> deleteTeacher(@RequestBody Teacher teacher) {
-        return teacherRepository.deleteById((long)teacher.getId());
+    // Não sei se funciona, tem que se experimentar
+    @DeleteMapping(value = "/{id}")
+    public Mono<Void> deleteTeacher(@PathVariable int id) {
+        if(teacherRepository
+                .findById((long) id) != null) {
+            return teacherRepository.deleteById((long) id);
+        }
+        return null;
     }
 }
