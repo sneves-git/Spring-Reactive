@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class TeacherService {
-
+/*
     @Autowired
     private TeacherRepository repository;
 
@@ -42,4 +42,6 @@ public class TeacherService {
     public Mono<Void> deleteTeacher(final int id){
         return this.repository.deleteById((long) id);
     }
+
+ */
 }

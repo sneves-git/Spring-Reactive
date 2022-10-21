@@ -1,0 +1,33 @@
+INSERT INTO student (name, birth_date, completed_credits, average_grade) values ('Tatiana Almeida', '2001-05-05', 180, 20.0);
+
+INSERT INTO student (name, birth_date, completed_credits, average_grade) values ('Sofia Neves', '2001-05-28', 100, 13.0);
+
+INSERT INTO student (name, birth_date, completed_credits, average_grade) values ('Edgar Duarte', '2001-02-27', 170, 19.0);
+
+INSERT INTO student (name, birth_date, completed_credits, average_grade) values ('Alexy de Almeida', '1996-11-23', 120, 16.0);
+
+INSERT INTO student (name, birth_date, completed_credits, average_grade) values ('Andre Carvalho', '2001-11-21', 200, 20.0);
+
+INSERT INTO student (name, birth_date, completed_credits, average_grade) values ('Paulo Cortesao', '2001-04-17', 160, 20.0);
+
+
+INSERT INTO teacher (name) values ('Antonio Jesus');
+INSERT INTO teacher (name) values ('Paulo Costa');
+INSERT INTO teacher (name) values ('Catarina Sousa');
+
+INSERT INTO teacher_student (student_id, teacher_id) values (1,1);
+INSERT INTO teacher_student (student_id, teacher_id) values (1,2);
+INSERT INTO teacher_student (student_id, teacher_id)values (1,3);
+INSERT INTO teacher_student (student_id, teacher_id) values (2,1);
+INSERT INTO teacher_student (student_id, teacher_id) values (3,2);
+INSERT INTO teacher_student (student_id, teacher_id) values (3,3);
+INSERT INTO teacher_student (student_id, teacher_id) values (4,2);
+INSERT INTO teacher_student (student_id, teacher_id) values (5,1);
+INSERT INTO teacher_student (student_id, teacher_id) values (6,3);
+
+select * from student;
+select * from teacher;
+select * from teacher_student;
+
+
+

@@ -2,13 +2,16 @@ package com.example.demo.controllers;
 
 
 import com.example.data.Student;
+import com.example.data.Teacher_student;
 import com.example.demo.repositories.StudentRepository;
+import com.example.demo.repositories.StudentTeacherRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import org.springframework.web.bind.annotation.RequestBody;
+
+import static java.lang.Thread.sleep;
 
 
 @RestController
@@ -17,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Slf4j
 public class StudentController {
     private final StudentRepository studentRepository;
+    private final StudentTeacherRepository relationshipRepository;
+    private final StudentTeacherController StudentTeacherController;
 
     @PostMapping
     public Mono<Student> createStudent(@RequestBody Student student) {
@@ -35,18 +40,29 @@ public class StudentController {
 
     @PutMapping
     public Mono<Student> updateStudent(@RequestBody Student student){
-        return studentRepository
+        return this.studentRepository
                 .findById((long) student.getId())
                 .flatMap(studentResult -> studentRepository.save(student));
     }
 
     // Não sei se funciona, ainda n experimentei
-    @DeleteMapping(value = "{id}")
-    public Mono<Void> deleteStudent(@PathVariable int id) {
-        if(studentRepository
-                .findById((long) id) != null) {
-            return studentRepository.deleteById((long) id);
-        }
-        return null;
+    @GetMapping(value = "/delete/{id}")
+    public Mono<Void> deleteStudent(@PathVariable int id) throws InterruptedException {
+        System.out.println("cheguei aqui crlh");
+        relationshipRepository.findAll()
+                                .filter(s -> s.getStudent_id().equals(id))
+                                .doOnNext((s) -> {
+                                    System.out.println("ID: "+ s.getStudent_id() + " Teacher: " + s.getTeacher_id());
+                                    aaaa(s.getId());
+
+                                }).subscribe();
+        sleep(3000);
+        System.out.println("LIXOOOOOOOOOOOOOOO");
+        return this.studentRepository.deleteById((long) id);
+    }
+
+    public Mono<Void> aaaa(int id) {
+        System.out.println("ID: " + id);
+        return this.relationshipRepository.deleteById((long) id);
     }
 }

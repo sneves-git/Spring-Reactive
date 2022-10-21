@@ -4,22 +4,22 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 @Data
-public class StudentTeacherRelationship {
+public class Teacher_student {
     @Id
     private Integer id;
 
     private Integer student_id;
     private Integer teacher_id;
 
-    public StudentTeacherRelationship() {
+    public Teacher_student() {
     }
 
-    public StudentTeacherRelationship(Integer student_id, Integer teacher_id) {
+    public Teacher_student(Integer student_id, Integer teacher_id) {
         this.student_id = student_id;
         this.teacher_id = teacher_id;
     }
 
-    public StudentTeacherRelationship(Integer id, Integer student_id, Integer teacher_id) {
+    public Teacher_student(Integer id, Integer student_id, Integer teacher_id) {
         this.id = id;
         this.student_id = student_id;
         this.teacher_id = teacher_id;

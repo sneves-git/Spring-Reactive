@@ -1,14 +1,13 @@
 package com.example.demo;
 
 import com.example.data.Student;
+import com.example.data.Teacher_student;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -32,8 +31,7 @@ public class ClientApplication {
     WebClient client() {
         return WebClient.create("http://localhost:8080");
     }
-
-    /*
+/*
     @Bean
     CommandLineRunner demo(WebClient client) {
         return args -> {
@@ -43,7 +41,7 @@ public class ClientApplication {
                     .bodyToFlux(Student.class)
                     .subscribe(System.out::println);
         };
-    }*/
+    }
 
     // 1. Names and birthdates of all students.
     @Bean
@@ -201,6 +199,25 @@ public class ClientApplication {
                     .subscribe(s -> System.out.println("-...... Name:" + s.getName()));
         };
     }
+
+    
+    //10. Average number of professors per student. Note that some professors may not
+    //have students and vice-versa.
+    @Bean
+    CommandLineRunner Relationships(WebClient client) {
+        System.out.println("===== Relationships =====");
+
+        return args -> {
+            client.get().uri("/relationship/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Teacher_student.class)
+                .subscribe(System.out::println);
+
+        };
+    }
+*/
+
 
 
 }

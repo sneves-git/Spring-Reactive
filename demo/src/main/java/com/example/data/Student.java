@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 @Data
 public class Student {
@@ -16,6 +17,7 @@ public class Student {
     private String birth_date;
     private Integer completed_credits;
     private Float average_grade;
+
 
     public Student() {
     }

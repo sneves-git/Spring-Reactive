@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
 import com.example.data.Teacher;
+import com.example.data.Teacher_student;
+import com.example.demo.repositories.StudentTeacherRepository;
 import com.example.demo.repositories.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +15,8 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 @Slf4j
 public class TeacherController {
-    private TeacherRepository teacherRepository;
+    private final TeacherRepository teacherRepository;
+    private final StudentTeacherRepository relationshipRepository;
 
     @PostMapping
     public Mono<Teacher> createTeacher(@RequestBody Teacher teacher) {
@@ -34,16 +37,14 @@ public class TeacherController {
     public Mono<Teacher> updateTeacher(@RequestBody Teacher teacher){
         return teacherRepository
                 .findById((long) teacher.getId())
-                .flatMap(studentResult -> teacherRepository.save(teacher));
+                .flatMap(teacherResult -> teacherRepository.save(teacher));
     }
 
     // Não sei se funciona, tem que se experimentar
-    @DeleteMapping(value = "/{id}")
+    @GetMapping(value = "/delete/{id}")
     public Mono<Void> deleteTeacher(@PathVariable int id) {
-        if(teacherRepository
-                .findById((long) id) != null) {
-            return teacherRepository.deleteById((long) id);
-        }
-        return null;
+        Flux<Teacher_student> relations = relationshipRepository.findAll().filter(s -> s.getTeacher_id().equals(id));
+        relations.map(s -> relationshipRepository.deleteById((long) s.getId())).publish();
+        return this.teacherRepository.deleteById((long) id);
     }
 }
