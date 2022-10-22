@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @RequestMapping(value = "/relationship")
@@ -27,31 +27,25 @@ public class StudentTeacherController {
     // Não sei se funciona, tem que se experimentar
     @PostMapping
     public Mono<Teacher_student> createRelationship(@RequestBody Teacher_student relationship) {
+        Flux<Teacher_student> relationships = repository.findAll();
 
-        //Verify if student exists
-        if(studentRepository
-                .findById((long) relationship.getStudent_id())
-                .block() == null){
+        Flux<Teacher_student> studentsRelationship = relationships.filter(s -> (s.getStudent_id() == relationship.getStudent_id()));
+        Flux<Teacher_student> teachersRelationship = relationships.filter(s -> (s.getTeacher_id() == relationship.getTeacher_id()));
+        AtomicInteger aux = new AtomicInteger();
+        studentsRelationship.doOnNext( student -> {
+            teachersRelationship.doOnNext( teacher -> {
+                if(student.getId() == teacher.getId()){
+                    System.out.println("ERRO");
+                    aux.set(1);
+                }
+            }).subscribe();
+        }).subscribe();
+
+        if(aux.get() == 1){
+            System.out.println("HERE1");
             return null;
         }
-        // Verify if teacher exists
-        if(teacherRepository
-                .findById((long) relationship.getTeacher_id())
-                .block() == null) {
-            return null;
-        }
-
-        // Verify if relationship exists
-        Flux<Teacher_student> relationshipFlux = repository.findAll();
-        Mono<Long> count = relationshipFlux.count();
-        Mono<Long> relationshipFluxVerified = relationshipFlux.filter(s -> ((!Objects.equals(s.getStudent_id(), relationship.getStudent_id()))
-                                                                                &&(!Objects.equals(s.getTeacher_id(), relationship.getTeacher_id()))))
-                                                                            .count();
-        if(count != relationshipFluxVerified){
-            return null;
-        }
-
-        // Save relationship
+        System.out.println("HERE2");
         return this.repository.save(relationship);
 
     }

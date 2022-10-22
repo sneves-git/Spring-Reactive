@@ -30,4 +30,43 @@ select * from teacher;
 select * from teacher_student;
 
 
+ Student Tatiana = new Student("Tatiana Almeida", "2001-05-05", 180, 20.0F);
+        Student Sofia = new Student("Sofia Neves", "2001-05-28",  100, 13.0F);
+        Student Edgar = new Student("Edgar Duarte", "2001-02-27",  170, 19.0F);
+        Student Alexy = new Student("Alexy Almeida", "1996-11-2", 120, 16.0F);
+        Student Andre = new Student("Andre Carvalho", "2001-11-21",  200, 19.0F);
+        Student Paulo = new Student("Paulo Cortesao", "2001-04-17", 160, 20.0F);
+        studentRepository.save(Tatiana);
+        studentRepository.save(Sofia);
+        studentRepository.save(Edgar);
+        studentRepository.save(Alexy);
+        studentRepository.save(Andre);
+        studentRepository.save(Paulo);
 
+        Teacher Antonio = new Teacher("Antonio Jesus");
+        Teacher PauloCosta = new Teacher("Paulo Costa");
+        Teacher Catarina = new Teacher("Catarina Sousa");
+
+        teacherRepository.save(Antonio);
+        teacherRepository.save(PauloCosta);
+        teacherRepository.save(Catarina);
+
+        Teacher_student relationship1 = new Teacher_student(1,1);
+        Teacher_student relationship2 = new Teacher_student(1,2);
+        Teacher_student relationship3 = new Teacher_student(1,3);
+        Teacher_student relationship4 = new Teacher_student(2,1);
+        Teacher_student relationship5 = new Teacher_student(3,2);
+        Teacher_student relationship6 = new Teacher_student(3,3);
+        Teacher_student relationship7 = new Teacher_student(4,2);
+        Teacher_student relationship8 = new Teacher_student(5,1);
+        Teacher_student relationship9 = new Teacher_student(6,3);
+
+        studentTeacherRepository.save(relationship1);
+        studentTeacherRepository.save(relationship2);
+        studentTeacherRepository.save(relationship3);
+        studentTeacherRepository.save(relationship4);
+        studentTeacherRepository.save(relationship5);
+        studentTeacherRepository.save(relationship6);
+        studentTeacherRepository.save(relationship7);
+        studentTeacherRepository.save(relationship8);
+        studentTeacherRepository.save(relationship9);

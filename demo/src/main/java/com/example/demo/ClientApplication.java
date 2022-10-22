@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.data.Student;
+import com.example.data.Teacher;
 import com.example.data.Teacher_student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,11 +11,13 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static java.lang.Math.*;
 
@@ -31,57 +34,48 @@ public class ClientApplication {
     WebClient client() {
         return WebClient.create("http://localhost:8080");
     }
-/*
-    @Bean
-    CommandLineRunner demo(WebClient client) {
-        return args -> {
-            client.get().uri("/student/all")
-                    .accept(MediaType.TEXT_EVENT_STREAM)
-                    .retrieve()
-                    .bodyToFlux(Student.class)
-                    .subscribe(System.out::println);
-        };
-    }
 
     // 1. Names and birthdates of all students.
     @Bean
     CommandLineRunner GetNamesAndBirthdaysFromAllStudents(WebClient client) {
-        System.out.println("===== Names And Birthdays From All Students =====");
         return args -> {
+            System.out.println("\n===== Names And Birthdays From All Students =====");
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
-                    .subscribe(cr -> System.out.println("Name: " + cr.getName() + " Birthday:" + cr.getBirth_date()));
+                    .doOnNext(cr -> System.out.println("-> Name: " + cr.getName() + " Birthday: " + cr.getBirth_date()))
+                    .blockLast();
         };
     }
 
     // 2. Total number of students.
     @Bean
     CommandLineRunner GetNumberOfStudents(WebClient client) {
-        System.out.println("===== Number Of Students =====");
         return args -> {
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
                     .count()
-                    .subscribe(System.out::println);
+                    .doOnNext(s -> System.out.println("\n===== Number Of Students =====\n-> " + s))
+                    .block();
         };
     }
 
     // 3. Total number of students that are active (i.e., that have less than 180 credits)
     @Bean
     CommandLineRunner GetNumberOfActiveStudents(WebClient client) {
-        System.out.println("===== Number Of Active Students (credits < 180) =====");
         return args -> {
+            System.out.println("\n===== Number Of Active Students (credits < 180) =====");
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
                     .filter(v -> v.getCompleted_credits() < 180)
                     .count()
-                    .subscribe(System.out::println);
+                    .doOnNext(s -> System.out.println("-> " + s))
+                    .block();
         };
     }
 
@@ -89,13 +83,14 @@ public class ClientApplication {
     //worth 6 credits.
     @Bean
     CommandLineRunner GetNumberOfCompletedCoursesFromEachStudent(WebClient client) {
-        System.out.println("===== Number Of Completed Courses From Each Student =====");
         return args -> {
+            System.out.println("\n===== Number Of Completed Courses From Each Student =====");
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
-                    .subscribe(cr -> System.out.println("Name: "+ cr.getName() + " || Completed Courses:" + cr.getCompleted_credits()/6));
+                    .doOnNext(cr -> System.out.println("Name: " + cr.getName() + " || Completed Courses:" + cr.getCompleted_credits() / 6))
+                    .blockLast();
         };
     }
 
@@ -105,23 +100,23 @@ public class ClientApplication {
     //professors.
     @Bean
     CommandLineRunner GetDataFromStudentsInTheLastYear(WebClient client) {
-        System.out.println("===== Students that are in the last year =====");
         return args -> {
+            System.out.println("\n===== Students that are in the last year =====");
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
-                    .filter(s -> (s.getCompleted_credits() >=120 && s.getCompleted_credits() <=180))
-                    .sort((a,b) -> b.getCompleted_credits().compareTo(a.getCompleted_credits()))
-                    .subscribe(cr -> System.out.println("-> Name: "+ cr.getName() + " || Completed Courses:" + cr.getCompleted_credits()/6));
+                    .filter(s -> (s.getCompleted_credits() >= 120 && s.getCompleted_credits() < 180))
+                    .sort((a, b) -> b.getCompleted_credits().compareTo(a.getCompleted_credits()))
+                    .doOnNext(cr -> System.out.println("-> Name: " + cr.getName() + " || Completed Courses:" + cr.getCompleted_credits() / 6))
+                    .blockLast();
         };
     }
 
     // 6. Average and standard deviations of all student grades.
     @Bean
     CommandLineRunner GetAverageAndStandardDeviationFromGrades(WebClient client) {
-        System.out.println("===== Average and Standard Deviation From Students Grades =====");
-        Flux<Student> fluxStream =  client.get().uri("/student/all")
+        Flux<Student> fluxStream = client.get().uri("/student/all")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
                 .bodyToFlux(Student.class);
@@ -129,17 +124,17 @@ public class ClientApplication {
         Mono<Long> count = fluxStream.count();
 
         Mono<Float> sum = fluxStream.map(Student::getAverage_grade)
-                                        .reduce(Float::sum);
+                .reduce(Float::sum);
         float mean = sum.block() / count.block();
 
 
-        Mono<Double> sd_sum = fluxStream.map(a -> pow(abs(a.getAverage_grade() - mean), 2))
-                                    .reduce(Double::sum);
+        Mono<Double> sd_sum = fluxStream.map(a -> pow(a.getAverage_grade() - mean, 2))
+                .reduce(Double::sum);
         Double sd = sqrt(sd_sum.block() / count.block());
 
 
         return args -> {
-            System.out.println("MEAN: "+ mean + "  Standard Deviation: " + sd);
+            System.out.println("\n===== Average and Standard Deviation From Students Grades ===== \n-> Mean: " + mean + "  Standard Deviation: " + sd);
         };
     }
 
@@ -147,8 +142,7 @@ public class ClientApplication {
     //(with 180 credits).
     @Bean
     CommandLineRunner GetAverageAndStandardDeviationForFinishedGraduation(WebClient client) {
-        System.out.println("===== Average and Standard Deviation of Students Who Have Finished Their Graduation =====");
-        Flux<Student> fluxStream =  client.get().uri("/student/all")
+        Flux<Student> fluxStream = client.get().uri("/student/all")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
                 .bodyToFlux(Student.class)
@@ -161,64 +155,159 @@ public class ClientApplication {
         float mean = sum.block() / count.block();
 
 
-        Mono<Double> sd_sum = fluxStream.map(a -> pow(abs(a.getAverage_grade() - mean), 2))
+        Mono<Double> sd_sum = fluxStream.map(a -> pow(a.getAverage_grade() - mean, 2))
                 .reduce(Double::sum);
 
         Double sd = sqrt(sd_sum.block() / count.block());
 
 
         return args -> {
-            System.out.println("-> MEAN: "+ mean + "  Standard Deviation: " + sd);
+            System.out.println("\n===== Average and Standard Deviation of Students Who Have Finished Their Graduation ===== \n -> Mean: " + mean + "  Standard Deviation: " + sd);
         };
     }
+
     // 8. The name of the eldest student.
     @Bean
     CommandLineRunner GetTheEldestStudent(WebClient client) {
-        System.out.println("===== Name Of the Eldest Student =====");
         return args -> {
             client.get().uri("/student/all")
                     .accept(MediaType.TEXT_EVENT_STREAM)
                     .retrieve()
                     .bodyToFlux(Student.class)
-                    .reduce((a,b) -> {
-                        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+                    .reduce((a, b) -> {
+                                SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
                                 Date date_a = null;
                                 Date date_b = null;
                                 try {
                                     date_a = sf.parse(a.getBirth_date());
-                                    System.out.println("1.Nome: "+ a.getName() + "data: "+ date_a);
                                     date_b = sf.parse(b.getBirth_date());
-                                    System.out.println("2.Nome: "+ b.getName() + "data: "+date_b);
 
                                 } catch (ParseException e) {
                                     throw new RuntimeException(e);
                                 }
-                        return date_a.compareTo(date_b) > 0 ? b : a;
-                    }
+                                return date_a.compareTo(date_b) > 0 ? b : a;
+                            }
                     )
-                    .subscribe(s -> System.out.println("-...... Name:" + s.getName()));
+                    .doOnNext(s -> System.out.println("\n===== Name Of the Eldest Student =====\n" + "-> " + s.getName()))
+                    .block();
         };
     }
 
-    
-    //10. Average number of professors per student. Note that some professors may not
+    //9. Average number of professors per student. Note that some professors may not
     //have students and vice-versa.
     @Bean
-    CommandLineRunner Relationships(WebClient client) {
-        System.out.println("===== Relationships =====");
+    CommandLineRunner RelationshipAverage(WebClient client) {
+        Long studentsNumber = client.get().uri("/student/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Student.class)
+                .count().block();
 
-        return args -> {
-            client.get().uri("/relationship/all")
+
+        Long relationshipsNumber = client.get().uri("/relationship/all")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
                 .bodyToFlux(Teacher_student.class)
-                .subscribe(System.out::println);
+                .count().block();
+
+        float average = (float) relationshipsNumber / studentsNumber;
+        return args -> {
+            System.out.println("\n===== Average number of professors per student =====\n" + "-> " + average);
+        };
+    }
+
+
+    //10.Name and number of students per professor, sorted in descending order.
+    @Bean
+    CommandLineRunner Relationships(WebClient client) {
+
+        return args -> {
+
+            Flux<Student> students = client.get().uri("/student/all")
+                    .accept(MediaType.TEXT_EVENT_STREAM)
+                    .retrieve()
+                    .bodyToFlux(Student.class);
+
+            Flux<Student> teachers = client.get().uri("/teacher/all")
+                    .accept(MediaType.TEXT_EVENT_STREAM)
+                    .retrieve()
+                    .bodyToFlux(Student.class);
+
+            Flux<Teacher_student> relationships = client.get().uri("/relationship/all")
+                    .accept(MediaType.TEXT_EVENT_STREAM)
+                    .retrieve()
+                    .bodyToFlux(Teacher_student.class);
+            System.out.println("\n===== Name and number of students per professor =====");
+            teachers.publishOn(Schedulers.boundedElastic()).publishOn(Schedulers.boundedElastic()).doOnNext(teacher -> {
+                        AtomicReference<Flux<Student>> studentsPerTeacher = new AtomicReference<>(Flux.just());
+                        System.out.println("Teacher: " + teacher.getName());
+                        relationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
+                                    if (relationship.getTeacher_id() == teacher.getId()) {
+                                        students.doOnNext(student -> {
+                                                    if (student.getId() == relationship.getStudent_id()) {
+                                                        //Flux.concat(studentsPerTeacher, Flux.just(student));
+                                                        studentsPerTeacher.set(Flux.merge(studentsPerTeacher.get(), Flux.just(student)));
+                                                        //System.out.println("->Student: "+ student.getName());
+                                                    }
+
+                                                }
+                                        ).blockLast();
+                                    }
+
+                                }
+                        ).blockLast();
+                        studentsPerTeacher.get().count().subscribe(s -> System.out.println("  Number of students: " + s));
+                        studentsPerTeacher.get().sort((a, b) -> b.getName().compareTo(a.getName())).doOnNext(s -> System.out.println("-> Student: " + s.getName())).blockLast();
+
+                    }
+            ).blockLast();
+        };
+
+    }
+
+
+    // 11. Complete	data of all	students, by adding	the	names of their professors.
+    @Bean
+    CommandLineRunner CompleteDataOfStudents(WebClient client) {
+        Flux<Teacher_student> relationships = client.get().uri("/relationship/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Teacher_student.class);
+
+        Flux<Teacher> teachers = client.get().uri("/teacher/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Teacher.class);
+
+        return args -> {
+            System.out.println("\n===== Complete data of all students =====");
+            client.get().uri("/student/all")
+                    .accept(MediaType.TEXT_EVENT_STREAM)
+                    .retrieve()
+                    .bodyToFlux(Student.class)
+                    .publishOn(Schedulers.boundedElastic())
+                    .doOnNext(s -> {
+                        System.out.println("\nName: " + s.getName() +
+                                "\nBirthday: " + s.getBirth_date() +
+                                "\nCompleted credits: " + s.getCompleted_credits() +
+                                "\nAverage grade: " + s.getAverage_grade() +
+                                "\nTeachers:");
+                        relationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
+                                    if (s.getId() == relationship.getStudent_id()) {
+                                        teachers.doOnNext(t -> {
+                                                    if (t.getId() == relationship.getTeacher_id()) {
+                                                        System.out.println(" - " + t.getName());
+                                                    }
+                                                })
+                                                .blockLast();
+                                    }
+                                })
+                                .blockLast();
+                    })
+                    .blockLast();
 
         };
     }
-*/
-
-
 
 }
 

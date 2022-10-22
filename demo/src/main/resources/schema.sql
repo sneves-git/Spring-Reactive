@@ -1,3 +1,8 @@
+DROP TABLE teacher_student;
+DROP TABLE student;
+DROP TABLE teacher;
+
+
 CREATE TABLE student (
                          id         SERIAL,
                          name         VARCHAR(512) NOT NULL,
@@ -17,7 +22,7 @@ CREATE TABLE teacher_student (
                                  id SERIAL,
                                  student_id BIGINT,
                                  teacher_id BIGINT,
-                                 PRIMARY KEY(id)
+                                 PRIMARY KEY(student_id,teacher_id)
 );
 
 ALTER TABLE teacher_student ADD CONSTRAINT teacher_student_fk1 FOREIGN KEY (teacher_id) REFERENCES teacher(id);

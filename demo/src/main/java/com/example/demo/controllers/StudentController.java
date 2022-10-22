@@ -47,22 +47,10 @@ public class StudentController {
 
     // Não sei se funciona, ainda n experimentei
     @GetMapping(value = "/delete/{id}")
-    public Mono<Void> deleteStudent(@PathVariable int id) throws InterruptedException {
-        System.out.println("cheguei aqui crlh");
-        relationshipRepository.findAll()
-                                .filter(s -> s.getStudent_id().equals(id))
-                                .doOnNext((s) -> {
-                                    System.out.println("ID: "+ s.getStudent_id() + " Teacher: " + s.getTeacher_id());
-                                    aaaa(s.getId());
+    public Mono<Void> deleteStudent(@PathVariable int id){
 
-                                }).subscribe();
-        sleep(3000);
-        System.out.println("LIXOOOOOOOOOOOOOOO");
         return this.studentRepository.deleteById((long) id);
     }
 
-    public Mono<Void> aaaa(int id) {
-        System.out.println("ID: " + id);
-        return this.relationshipRepository.deleteById((long) id);
-    }
+
 }
