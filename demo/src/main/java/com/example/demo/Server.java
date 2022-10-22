@@ -6,11 +6,11 @@ import com.example.data.Teacher_student;
 import com.example.demo.repositories.StudentRepository;
 import com.example.demo.repositories.StudentTeacherRepository;
 import com.example.demo.repositories.TeacherRepository;
+import io.r2dbc.spi.ConnectionFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import io.r2dbc.spi.ConnectionFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.r2dbc.config.EnableR2dbcAuditing;
@@ -21,20 +21,16 @@ import java.time.Duration;
 import java.util.Arrays;
 
 import static java.lang.Thread.sleep;
-
 @SpringBootApplication
 @EnableR2dbcAuditing
 public class Server {
-    StudentRepository studentRepository;
-    StudentTeacherRepository studentTeacherRepository;
-    TeacherRepository teacherRepository;
 
 
 
     public static void main(String[] args) {
         SpringApplication.run(Server.class, args);
     }
-/*
+
     @Bean
     ConnectionFactoryInitializer initializer(@Qualifier("connectionFactory") ConnectionFactory connectionFactory) {
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
@@ -44,7 +40,6 @@ public class Server {
         initializer.setDatabasePopulator(resource);
         return initializer;
     }
-
 
     @Bean
     public CommandLineRunner createStudents(StudentRepository repository) {
@@ -75,7 +70,7 @@ public class Server {
         return args -> {
             repository.saveAll(Arrays.asList(new Teacher_student(1,1),
                                             new Teacher_student(1,2),
-                                             new Teacher_student(1,3),
+                                            new Teacher_student(1,3),
                                             new Teacher_student(2,1),
                                             new Teacher_student(3,2),
                                             new Teacher_student(3,3),
@@ -86,5 +81,5 @@ public class Server {
         };
     }
 
-*/
+
 }

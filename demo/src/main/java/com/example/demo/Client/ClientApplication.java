@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Client;
 
 import com.example.data.Student;
 import com.example.data.Teacher;
@@ -19,9 +19,10 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static java.lang.Math.*;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.demo")
 public class ClientApplication {
 
     public static void main(String[] args) {
