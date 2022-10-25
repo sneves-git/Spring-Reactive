@@ -21,6 +21,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
+import static java.lang.Thread.sleep;
 
 @SpringBootApplication
 public class ClientApplication {
@@ -272,6 +273,7 @@ public class ClientApplication {
     // 11. Complete	data of all	students, by adding	the	names of their professors.
     @Bean
     CommandLineRunner CompleteDataOfStudents(WebClient client) {
+        long begin = System.currentTimeMillis();
         Flux<Teacher_student> relationships = client.get().uri("/relationship/all")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
@@ -308,6 +310,54 @@ public class ClientApplication {
                                 .blockLast();
                     })
                     .blockLast();
+            System.out.println("tempo NORMAL: " + (System.currentTimeMillis() - begin));
+        };
+
+    }
+
+    // 11 Extra. Complete	data of all	students, by adding	the	names of their professors.
+    @Bean
+    CommandLineRunner CompleteDataOfStudentsExtra(WebClient client) {
+        long begin = System.currentTimeMillis();
+        Flux<Teacher_student> relationships = client.get().uri("/relationship/all")
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(Teacher_student.class);
+
+
+        return args -> {
+            System.out.println("\n===== Complete data of all students EXTRA =====");
+            client.get().uri("/student/all")
+                    .accept(MediaType.TEXT_EVENT_STREAM)
+                    .retrieve()
+                    .bodyToFlux(Student.class)
+                    .publishOn(Schedulers.boundedElastic())
+                    .doOnNext(s -> {
+                        System.out.println("\nName: " + s.getName() +
+                                "\nBirthday: " + s.getBirth_date() +
+                                "\nCompleted credits: " + s.getCompleted_credits() +
+                                "\nAverage grade: " + s.getAverage_grade() +
+                                "\nTeachers:");
+                        relationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
+                                    if (s.getId() == relationship.getStudent_id()) {
+                                        try {
+                                            sleep(100);
+                                        } catch (InterruptedException e) {
+                                            throw new RuntimeException(e);
+                                        }
+
+                                        client.get().uri("/teacher/" + relationship.getTeacher_id())
+                                                .accept(MediaType.TEXT_EVENT_STREAM)
+                                                .retrieve()
+                                                .bodyToFlux(Teacher.class)
+                                                .doOnNext(t ->  System.out.println(" - " + t.getName()))
+                                                .blockLast();
+                                    }
+                                })
+                                .blockLast();
+                    })
+                    .blockLast();
+            System.out.println("tempo EXTRA: " + (System.currentTimeMillis() - begin));
 
         };
     }
