@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.example.demo.ServerFolder;
 
 import com.example.data.Student;
 import com.example.data.Teacher;
 import com.example.data.Teacher_student;
-import com.example.demo.repositories.StudentRepository;
-import com.example.demo.repositories.StudentTeacherRepository;
-import com.example.demo.repositories.TeacherRepository;
+import com.example.demo.ServerFolder.repositories.StudentRepository;
+import com.example.demo.ServerFolder.repositories.StudentTeacherRepository;
+import com.example.demo.ServerFolder.repositories.TeacherRepository;
 import io.r2dbc.spi.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -24,8 +24,6 @@ import static java.lang.Thread.sleep;
 @SpringBootApplication
 @EnableR2dbcAuditing
 public class Server {
-
-
 
     public static void main(String[] args) {
         SpringApplication.run(Server.class, args);
@@ -80,6 +78,5 @@ public class Server {
                     .blockLast(Duration.ofSeconds(10));
         };
     }
-
 
 }

@@ -1,4 +1,4 @@
-package com.example.demo.repositories;
+package com.example.demo.ServerFolder.repositories;
 
 import com.example.data.Teacher_student;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

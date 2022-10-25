@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-@SpringBootApplication(scanBasePackages = "com.example.demo")
+@SpringBootApplication
 public class ClientApplication {
 
     public static void main(String[] args) {
@@ -114,6 +114,7 @@ public class ClientApplication {
         };
     }
 
+
     // 6. Average and standard deviations of all student grades.
     @Bean
     CommandLineRunner GetAverageAndStandardDeviationFromGrades(WebClient client) {
@@ -138,6 +139,7 @@ public class ClientApplication {
             System.out.println("\n===== Average and Standard Deviation From Students Grades ===== \n-> Mean: " + mean + "  Standard Deviation: " + sd);
         };
     }
+
 
     // 7. Average and standard deviations of students who have finished their graduation
     //(with 180 credits).

@@ -1,12 +1,11 @@
-package com.example.demo.controllers;
+package com.example.demo.ServerFolder.controllers;
 
 
 import com.example.data.Student;
-import com.example.data.Teacher_student;
-import com.example.demo.repositories.StudentRepository;
-import com.example.demo.repositories.StudentTeacherRepository;
+import com.example.demo.ServerFolder.services.StudentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -19,37 +18,33 @@ import static java.lang.Thread.sleep;
 @RequiredArgsConstructor
 @Slf4j
 public class StudentController {
-    private final StudentRepository studentRepository;
-    private final StudentTeacherRepository relationshipRepository;
-    private final StudentTeacherController StudentTeacherController;
+
+    @Autowired
+    StudentService studentService;
+
 
     @PostMapping
     public Mono<Student> createStudent(@RequestBody Student student) {
-        return this.studentRepository.save(student);
+        return studentService.createStudent(student);
     }
 
     @GetMapping(value = "/all")
     public Flux<Student> getAllStudents(){
-        return this.studentRepository.findAll();
+        return studentService.getAllStudents();
     }
 
     @GetMapping(value = "/{id}")
     public Mono<Student> getStudentById(@PathVariable int id){
-        return this.studentRepository.findById((long)id);
+        return studentService.getStudentById(id);
     }
 
     @PutMapping
     public Mono<Student> updateStudent(@RequestBody Student student){
-        return this.studentRepository
-                .findById((long) student.getId())
-                .flatMap(studentResult -> studentRepository.save(student));
+       return studentService.updateStudent(student);
     }
-
-    // Não sei se funciona, ainda n experimentei
     @GetMapping(value = "/delete/{id}")
     public Mono<Void> deleteStudent(@PathVariable int id){
-
-        return this.studentRepository.deleteById((long) id);
+        return studentService.deleteStudent(id);
     }
 
 
