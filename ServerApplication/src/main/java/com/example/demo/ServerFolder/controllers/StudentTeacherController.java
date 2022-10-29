@@ -1,5 +1,6 @@
 package com.example.demo.ServerFolder.controllers;
 
+import com.example.data.Student;
 import com.example.data.Teacher_student;
 import com.example.demo.ServerFolder.services.StudentTeacherService;
 import lombok.RequiredArgsConstructor;
@@ -37,6 +38,10 @@ public class StudentTeacherController {
     }
 
 
-
+    // Student relationships
+    @GetMapping(value = "/student/{id}")
+    public Flux<Teacher_student> getStudentRelationships(@PathVariable int id){
+        return relationshipService.getStudentRelationships(id);
+    }
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.ServerFolder.services;
 
+import com.example.data.Student;
 import com.example.data.Teacher_student;
 import com.example.demo.ServerFolder.repositories.StudentRepository;
 import com.example.demo.ServerFolder.repositories.StudentTeacherRepository;
@@ -23,7 +24,6 @@ public class StudentTeacherService {
 
     // - Create	relationship.
     // Não sei se funciona, tem que se experimentar
-    @PostMapping
     public Mono<Teacher_student> createRelationship(@RequestBody Teacher_student relationship) {
         Flux<Teacher_student> relationships = relationshipRepository.findAll();
 
@@ -48,7 +48,6 @@ public class StudentTeacherService {
 
     }
 
-    @GetMapping(value = "/all")
     public Flux<Teacher_student> getAllRelationships(){
         return this.relationshipRepository.findAll();
     }
@@ -56,16 +55,15 @@ public class StudentTeacherService {
 
 
     // - Delete	relationship.
-    // Não sei se funciona, tem que se experimentar
-    @GetMapping(value = "/delete/{id}")
     public Mono<Void> deleteRelationship(@PathVariable int id) {
         System.out.println("ID: " + id);
         return this.relationshipRepository.deleteById((long) id);
     }
 
 
-// - Read	relationship.	This service	can	only	return	the	identifiers	of	some	student's
-//professors,	not	the	entire	professor data. I.e.,	students	should	not	create	a	service
-//that	 immediately	 provides,	 say,	 a	 student	 with	 all	 data	 of	 all	 the	 student’s
-//professors
+    // Student relationships
+    public Flux<Teacher_student> getStudentRelationships(int id){
+        return this.relationshipRepository.findRelationshipsByStudentId((long)id);
+    }
+
 }
