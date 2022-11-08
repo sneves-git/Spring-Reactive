@@ -10,7 +10,6 @@ import reactor.core.scheduler.Schedulers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.temporal.Temporal;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,6 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
+import static java.lang.Thread.sleep;
 
 
 public class ClientApplication {
@@ -37,7 +37,7 @@ public class ClientApplication {
 
 
         // 2. Total number of students.
-       allStudents.count()
+        allStudents.count()
                 .doOnNext(s -> System.out.println("\n===== Number Of Students =====\n-> " + s))
                 .block();
 
@@ -53,7 +53,7 @@ public class ClientApplication {
         // 4. Total number of courses completed for all students, knowing that each course is
         //worth 6 credits.
         System.out.println("\n===== Number Of Completed Courses From Each Student =====");
-       allStudents.doOnNext(cr -> System.out.println("Name: " + cr.getName() + " || Completed Courses:" + cr.getCompleted_credits() / 6))
+        allStudents.doOnNext(cr -> System.out.println("Name: " + cr.getName() + " || Completed Courses:" + cr.getCompleted_credits() / 6))
                 .blockLast();
 
 
@@ -74,16 +74,16 @@ public class ClientApplication {
         Mono<Float> sum = allStudents.map(Student::getAverage_grade)
                 .reduce(Float::sum);
         float mean = 0f;
-        if(sum.block() != null && count.block() != null){
+        if (sum.block() != null && count.block() != null) {
             mean = sum.block() / count.block();
         }
 
         float finalMean = mean;
         Mono<Double> sd_sum = allStudents.map(a -> pow(a.getAverage_grade() - finalMean, 2))
                 .reduce(Double::sum);
-        double sd =  0;
-        if(sd_sum.block() != null && count.block() != null){
-            sd = sum.block() / count.block();
+        double sd = 0;
+        if (sd_sum.block() != null && count.block() != null) {
+            sd = sqrt(sd_sum.block() / count.block());
         }
         System.out.println("\n===== Average and Standard Deviation From Students Grades ===== \n-> Mean: " + mean + "  Standard Deviation: " + sd);
 
@@ -99,7 +99,7 @@ public class ClientApplication {
         Mono<Float> sum1 = allStudents.map(Student::getAverage_grade)
                 .reduce(Float::sum);
         float mean1 = 0f;
-        if(sum1.block() != null && count1.block() != null){
+        if (sum1.block() != null && count1.block() != null) {
             mean1 = sum1.block() / count1.block();
 
         }
@@ -108,8 +108,8 @@ public class ClientApplication {
         Mono<Double> sd_sum1 = allStudents.map(a -> pow(a.getAverage_grade() - finalMean1, 2))
                 .reduce(Double::sum);
 
-        double sd1 = 0 ;
-        if(sd_sum.block() != null && count1.block() != null){
+        double sd1 = 0;
+        if (sd_sum.block() != null && count1.block() != null) {
             sd1 = sqrt(sd_sum1.block() / count1.block());
         }
 
@@ -149,8 +149,8 @@ public class ClientApplication {
         Long relationshipsNumber = allRelationships.count().block();
 
         float average = 0;
-        if(relationshipsNumber != null && studentsNumber != null){
-             average = (float) relationshipsNumber / studentsNumber;
+        if (relationshipsNumber != null && studentsNumber != null) {
+            average = (float) relationshipsNumber / studentsNumber;
         }
         System.out.println("\n===== Average number of professors per student =====\n" + "-> " + average);
 
@@ -161,89 +161,66 @@ public class ClientApplication {
                 .retrieve()
                 .bodyToFlux(Teacher.class);
 
-        AtomicInteger iteration = new AtomicInteger();
         teachers.publishOn(Schedulers.boundedElastic()).map(teacher -> {
-            Flux<Teacher_student> TeacherRelationship  = client.get().uri("localhost:8080/relationship/teacher/"+ teacher.getId())
-                    .accept(MediaType.TEXT_EVENT_STREAM)
-                    .retrieve()
-                    .bodyToFlux(Teacher_student.class);
-            AtomicReference<Flux<Integer>> ids = new AtomicReference<>(Flux.just(teacher.getId()));
-            TeacherRelationship.doOnNext(relationship -> {
-                ids.set(Flux.merge(ids.get(),Flux.just(relationship.getStudent_id())));
+                    Flux<Teacher_student> TeacherRelationship = client.get().uri("localhost:8080/relationship/teacher/" + teacher.getId())
+                            .accept(MediaType.TEXT_EVENT_STREAM)
+                            .retrieve()
+                            .bodyToFlux(Teacher_student.class);
+                    AtomicReference<Flux<Integer>> ids = new AtomicReference<>(Flux.just(teacher.getId()));
+                    TeacherRelationship.doOnNext(relationship -> {
+                        ids.set(Flux.merge(ids.get(), Flux.just(relationship.getStudent_id())));
 
-            }).blockLast();
-            return ids;
-        }).sort((a,b) -> Objects.requireNonNull(b.get().count().block()).compareTo(Objects.requireNonNull(a.get().count().block())))
+                    }).blockLast();
+                    return ids;
+                }).sort((a, b) -> Objects.requireNonNull(b.get().count().block()).compareTo(Objects.requireNonNull(a.get().count().block())))
                 .doOnNext(cr -> {
                     System.out.print("\nProfessor: ");
-                    client.get().uri("localhost:8080/teacher/" +cr.get().take(1).blockLast() )
+                    client.get().uri("localhost:8080/teacher/" + cr.get().take(1).blockLast())
                             .accept(MediaType.TEXT_EVENT_STREAM)
                             .retrieve()
                             .bodyToFlux(Teacher.class)
                             .doOnNext(prof -> {
                                 System.out.println(prof.getName());
                             }).blockLast();
-                    AtomicInteger counter  = new AtomicInteger();
-                    System.out.println("Number Of Students: " + (cr.get().count().block() -1) );
-                    if(cr.get().count().block() -1 != 0){
-                        cr.get().publishOn(Schedulers.boundedElastic()).doOnNext(id -> { if(counter.get() != 0){
-                                    client.get().uri("localhost:8080/student/" +id )
-                                            .accept(MediaType.TEXT_EVENT_STREAM)
-                                            .retrieve()
-                                            .bodyToFlux(Student.class)
-                                            .doOnNext(student -> {
-                                                System.out.println(" -> "+student.getName());
-                                            }).blockLast();
-                                }else{
-                                    System.out.println("Students");
-                                }
-                                    counter.set(1);
-                                }
-                        ).blockLast();
+                    AtomicInteger counter = new AtomicInteger();
+                    if (cr.get().count().block() != null) {
+                        System.out.println("Number Of Students: " + (cr.get().count().block() - 1));
+                        if (cr.get().count().block() - 1 != 0) {
+                            cr.get().publishOn(Schedulers.boundedElastic()).doOnNext(id -> {
+                                        if (counter.get() != 0) {
+                                            client.get().uri("localhost:8080/student/" + id)
+                                                    .accept(MediaType.TEXT_EVENT_STREAM)
+                                                    .retrieve()
+                                                    .bodyToFlux(Student.class)
+                                                    .doOnNext(student -> {
+                                                        System.out.println(" -> " + student.getName());
+                                                    }).blockLast();
+                                        } else {
+                                            System.out.println("Students");
+                                        }
+                                        counter.set(1);
+                                    }
+                            ).blockLast();
+                        }
                     }
 
 
                 }).blockLast();
 
 
-
-        Flux<Teacher_student> relationships = client.get().uri("localhost:8080/relationship/all")
-                .accept(MediaType.TEXT_EVENT_STREAM)
-                .retrieve()
-                .bodyToFlux(Teacher_student.class);
-/*
-        System.out.println("\n===== Name and number of students per professor =====");
-
-        teachers.publishOn(Schedulers.boundedElastic()).publishOn(Schedulers.boundedElastic()).doOnNext(teacher -> {
-                    System.out.println("Teacher: " + teacher.getName());
-                    AtomicReference<Flux<Student>> teacherStudents = new AtomicReference<>(Flux.just());
-                    Flux<Teacher_student> teacherRelationships = relationships.filter(r -> r.getTeacher_id() == teacher.getId());
-                    teacherRelationships.publishOn(Schedulers.boundedElastic()).doOnNext(relation -> {
-                        teacherStudents.set(Flux.merge(teacherStudents.get(), students.filter(s -> s.getId() == relation.getStudent_id())));
-                    }).blockLast();
-                    teacherStudents.get().count().subscribe(s -> System.out.println("  Number of students: " + s));
-                    teacherStudents.get().sort((a, b) -> b.getName().compareTo(a.getName())).doOnNext(s -> System.out.println("-> Student: " + s.getName())).blockLast();
-        }).blockLast();
-
-
-
-
         // 11. Complete	data of all	students, by adding	the	names of their professors.
         long begin = System.currentTimeMillis();
 
         System.out.println("\n===== Complete data of all students =====");
-        client.get().uri("localhost:8080/student/all")
-                .accept(MediaType.TEXT_EVENT_STREAM)
-                .retrieve()
-                .bodyToFlux(Student.class)
+        allStudents
                 .publishOn(Schedulers.boundedElastic())
                 .doOnNext(s -> {
                     System.out.println("\nName: " + s.getName() +
-                            "\nBirthday: " + s.getBirth_date() +
-                            "\nCompleted credits: " + s.getCompleted_credits() +
-                            "\nAverage grade: " + s.getAverage_grade() +
+                            " || Birthday: " + s.getBirth_date() +
+                            " || Completed credits: " + s.getCompleted_credits() +
+                            " || Average grade: " + s.getAverage_grade() +
                             "\nTeachers:");
-                    relationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
+                    allRelationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
                                 if (s.getId() == relationship.getStudent_id()) {
                                     teachers.doOnNext(t -> {
                                                 if (t.getId() == relationship.getTeacher_id()) {
@@ -263,44 +240,39 @@ public class ClientApplication {
         begin = System.currentTimeMillis();
 
         System.out.println("\n===== Complete data of all students EXTRA =====");
-        client.get().uri("localhost:8080/student/all")
-                .accept(MediaType.TEXT_EVENT_STREAM)
-                .retrieve()
-                .bodyToFlux(Student.class)
-                .publishOn(Schedulers.boundedElastic())
+        allStudents.publishOn(Schedulers.boundedElastic())
                 .doOnNext(s -> {
-                            System.out.println("\nName: " + s.getName() +
-                                    "\nBirthday: " + s.getBirth_date() +
-                                    "\nCompleted credits: " + s.getCompleted_credits() +
-                                    "\nAverage grade: " + s.getAverage_grade() +
-                                    "\nTeachers:");
+                    System.out.println("\nName: " + s.getName() +
+                            " || Birthday: " + s.getBirth_date() +
+                            " || Completed credits: " + s.getCompleted_credits() +
+                            " || Average grade: " + s.getAverage_grade() +
+                            "\nTeachers:");
 
-                            Flux<Teacher_student> relationship = client.get().uri("localhost:8080/relationship/student/" + s.getId())
-                                    .accept(MediaType.TEXT_EVENT_STREAM)
-                                    .retrieve()
-                                    .bodyToFlux(Teacher_student.class);
+                    Flux<Teacher_student> relationship = client.get().uri("localhost:8080/relationship/student/" + s.getId())
+                            .accept(MediaType.TEXT_EVENT_STREAM)
+                            .retrieve()
+                            .bodyToFlux(Teacher_student.class);
 
-                            relationship.hasElements()
-                                    .publishOn(Schedulers.boundedElastic())
-                                    .doOnNext(it -> {
-                                        if (it) {
-                                            relationship.publishOn(Schedulers.boundedElastic()).doOnNext(relation -> {
-                                                client.get().uri("localhost:8080/teacher/" + relation.getTeacher_id())
-                                                        .accept(MediaType.TEXT_EVENT_STREAM)
-                                                        .retrieve()
-                                                        .bodyToFlux(Teacher.class)
-                                                        .doOnNext(t -> System.out.println(" - " + t.getName()))
-                                                        .blockLast();
-                                            }).blockLast();
-                                        } else {
-                                            System.out.println("No professors");
+                    relationship.hasElements()
+                            .publishOn(Schedulers.boundedElastic())
+                            .doOnNext(it -> {
+                                if (it) {
+                                    relationship.publishOn(Schedulers.boundedElastic()).doOnNext(relation -> {
+                                        client.get().uri("localhost:8080/teacher/" + relation.getTeacher_id())
+                                                .accept(MediaType.TEXT_EVENT_STREAM)
+                                                .retrieve()
+                                                .bodyToFlux(Teacher.class)
+                                                .doOnNext(t -> System.out.println(" - " + t.getName()))
+                                                .blockLast();
+                                    }).blockLast();
+                                } else {
+                                    System.out.println("No professors");
 
-                                        }
-                                    }).subscribe();
-                        })
+                                }
+                            }).block();
+                })
                 .blockLast();
-                System.out.println("tempo EXTRA1: " + (System.currentTimeMillis() - begin));
-
+        System.out.println("tempo EXTRA1: " + (System.currentTimeMillis() - begin));
 
 
         // 11 Extra. Complete	data of all	students, by adding	the	names of their professors.
@@ -314,11 +286,11 @@ public class ClientApplication {
                 .publishOn(Schedulers.boundedElastic())
                 .doOnNext(s -> {
                     System.out.println("\nName: " + s.getName() +
-                            "\nBirthday: " + s.getBirth_date() +
-                            "\nCompleted credits: " + s.getCompleted_credits() +
-                            "\nAverage grade: " + s.getAverage_grade() +
+                            " || Birthday: " + s.getBirth_date() +
+                            " || Completed credits: " + s.getCompleted_credits() +
+                            " || Average grade: " + s.getAverage_grade() +
                             "\nTeachers:");
-                    relationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
+                    allRelationships.publishOn(Schedulers.boundedElastic()).doOnNext(relationship -> {
                                 if (s.getId() == relationship.getStudent_id()) {
                                     try {
                                         sleep(100);
@@ -330,7 +302,7 @@ public class ClientApplication {
                                             .accept(MediaType.TEXT_EVENT_STREAM)
                                             .retrieve()
                                             .bodyToFlux(Teacher.class)
-                                            .doOnNext(t ->  System.out.println(" - " + t.getName()))
+                                            .doOnNext(t -> System.out.println(" - " + t.getName()))
                                             .blockLast();
                                 }
                             })
@@ -338,7 +310,7 @@ public class ClientApplication {
                 })
                 .blockLast();
         System.out.println("tempo EXTRA2: " + (System.currentTimeMillis() - begin));
-*/
+
     }
 
 
