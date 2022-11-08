@@ -10,4 +10,6 @@ import reactor.core.publisher.Flux;
 public interface StudentTeacherRepository extends ReactiveCrudRepository<Teacher_student,Long> {
     @Query("SELECT * FROM teacher_student WHERE student_id = $1")
     Flux<Teacher_student> findRelationshipsByStudentId(long id);
+    @Query("SELECT * FROM teacher_student WHERE teacher_id = $1")
+    Flux<Teacher_student> findRelationshipsByTeacherId(long id);
 }

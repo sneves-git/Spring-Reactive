@@ -21,6 +21,7 @@ import java.time.Duration;
 import java.util.Arrays;
 
 import static java.lang.Thread.sleep;
+
 @SpringBootApplication
 @EnableR2dbcAuditing
 public class Server {
@@ -58,7 +59,9 @@ public class Server {
         return args -> {
             repository.saveAll(Arrays.asList(new Teacher("Antonio Jesus"),
                             new Teacher("Paulo Costa"),
-                            new Teacher("Catarina Sousa")))
+
+                            new Teacher("Catarina Sousa"),
+                            new Teacher("Deolinda Marques")))
                     .blockLast(Duration.ofSeconds(10));
         };
     }
@@ -66,15 +69,15 @@ public class Server {
     @Bean
     public CommandLineRunner createRelationships(StudentTeacherRepository repository) {
         return args -> {
-            repository.saveAll(Arrays.asList(new Teacher_student(1,1),
-                                            new Teacher_student(1,2),
-                                            new Teacher_student(1,3),
-                                            new Teacher_student(2,1),
-                                            new Teacher_student(3,2),
-                                            new Teacher_student(3,3),
-                                            new Teacher_student(4,2),
-                                            new Teacher_student(5,1),
-                                            new Teacher_student(6,3)))
+            repository.saveAll(Arrays.asList(new Teacher_student(1, 1),
+                            new Teacher_student(1, 2),
+                            new Teacher_student(1, 3),
+                            new Teacher_student(2, 1),
+                            new Teacher_student(2, 2),
+                            new Teacher_student(3, 2),
+                            new Teacher_student(4, 2),
+                            new Teacher_student(5, 1),
+                            new Teacher_student(6, 3)))
                     .blockLast(Duration.ofSeconds(10));
         };
     }

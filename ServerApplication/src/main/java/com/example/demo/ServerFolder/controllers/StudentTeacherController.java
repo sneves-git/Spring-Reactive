@@ -44,4 +44,9 @@ public class StudentTeacherController {
         return relationshipService.getStudentRelationships(id);
     }
 
+    @GetMapping(value = "/teacher/{id}")
+    public Flux<Teacher_student> getTeacherRelationships(@PathVariable int id){
+        return relationshipService.getTeacherRelationships(id);
+    }
+
 }

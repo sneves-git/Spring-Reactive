@@ -66,4 +66,8 @@ public class StudentTeacherService {
         return this.relationshipRepository.findRelationshipsByStudentId((long)id);
     }
 
+    public Flux<Teacher_student> getTeacherRelationships(int id){
+        return this.relationshipRepository.findRelationshipsByTeacherId((long)id);
+    }
+
 }
