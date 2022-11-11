@@ -25,7 +25,7 @@ public class ClientApplication {
     public static void main(String[] args) {
 
         WebClient client = getWebClient();
-
+        long beginTime = System.currentTimeMillis();
         Flux<Student> allStudents = client.get().uri("localhost:8080/student/all")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
@@ -234,8 +234,8 @@ public class ClientApplication {
                 })
                 .blockLast();
         System.out.println("tempo NORMAL: " + (System.currentTimeMillis() - begin));
-
-
+        System.out.println("Tempo do programa inteiro: " + (System.currentTimeMillis() - beginTime));
+        
         // 11 Extra. Complete	data of all	students, by adding	the	names of their professors.
         begin = System.currentTimeMillis();
 
@@ -279,11 +279,7 @@ public class ClientApplication {
         begin = System.currentTimeMillis();
 
         System.out.println("\n===== Complete data of all students EXTRA =====");
-        client.get().uri("localhost:8080/student/all")
-                .accept(MediaType.TEXT_EVENT_STREAM)
-                .retrieve()
-                .bodyToFlux(Student.class)
-                .publishOn(Schedulers.boundedElastic())
+       allStudents.publishOn(Schedulers.boundedElastic())
                 .doOnNext(s -> {
                     System.out.println("\nName: " + s.getName() +
                             " || Birthday: " + s.getBirth_date() +

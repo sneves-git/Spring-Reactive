@@ -7,6 +7,11 @@ import com.example.demo.ServerFolder.repositories.StudentRepository;
 import com.example.demo.ServerFolder.repositories.StudentTeacherRepository;
 import com.example.demo.ServerFolder.repositories.TeacherRepository;
 import io.r2dbc.spi.ConnectionFactory;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +22,8 @@ import org.springframework.data.r2dbc.config.EnableR2dbcAuditing;
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
 
@@ -26,8 +33,18 @@ import static java.lang.Thread.sleep;
 @EnableR2dbcAuditing
 public class Server {
 
-    public static void main(String[] args) {
+    public static Logger log = LogManager.getLogger(Server.class.getName());
+
+    public static void main(String[] args)  {
+        String log4jConfigFile = System.getProperty("user.dir")
+                + File.separator + "log4j.properties";
+        PropertyConfigurator.configure(log4jConfigFile);
+
+        log.info("This is my first log4j's statement");
         SpringApplication.run(Server.class, args);
+
+
+
     }
 
     @Bean

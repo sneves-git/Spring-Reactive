@@ -1,6 +1,7 @@
 package com.example.demo.ServerFolder.services;
 
 import com.example.data.Student;
+import com.example.demo.ServerFolder.Server;
 import com.example.demo.ServerFolder.controllers.StudentTeacherController;
 import com.example.demo.ServerFolder.repositories.StudentRepository;
 import com.example.demo.ServerFolder.repositories.StudentTeacherRepository;
@@ -19,6 +20,7 @@ public class StudentService {
     }
 
     public Flux<Student> getAllStudents(){
+
         return this.studentRepository.findAll();
     }
 
