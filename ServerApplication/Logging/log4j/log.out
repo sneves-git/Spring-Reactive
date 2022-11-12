@@ -1,192 +1,784 @@
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:45 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:45 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:45 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
-2022-11-11 12:17:45 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
-2022-11-11 12:17:45 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
-2022-11-11 12:17:45 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
-2022-11-11 12:17:45 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 1
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 2
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 3
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 4
-2022-11-11 12:17:45 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 1
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 2
-2022-11-11 12:17:45 INFO  -  [Student Controller] Getting the student with the id 5
-2022-11-11 12:17:45 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:17:46 INFO  -  [Student Controller] Getting the student with the id 1
-2022-11-11 12:17:46 INFO  -  [Student Controller] Getting the student with the id 6
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 4
-2022-11-11 12:17:46 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:17:46 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:17:46 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:17:46 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:46 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:47 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:47 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:47 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:47 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:47 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:17:47 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:47 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:17:47 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:17:47 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:17 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:17 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
-2022-11-11 12:23:17 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
-2022-11-11 12:23:17 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
-2022-11-11 12:23:17 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
-2022-11-11 12:23:17 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 1
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 2
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 3
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 4
-2022-11-11 12:23:17 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 1
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 2
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 5
-2022-11-11 12:23:17 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 1
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting the student with the id 6
-2022-11-11 12:23:17 INFO  -  [Teacher Controller] Getting teacher with id 4
-2022-11-11 12:23:17 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:17 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:17 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting all teachers
-2022-11-11 12:23:18 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:23:18 INFO  -  [Student Controller] Getting all students
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 3
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:18 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:18 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:19 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:19 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:19 INFO  -  [Teacher Controller] Getting teacher with id 2
-2022-11-11 12:23:19 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:19 INFO  -  [Teacher Controller] Getting teacher with id 1
-2022-11-11 12:23:19 INFO  -  [Relationship Controller] Getting all relationships
-2022-11-11 12:23:19 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:38 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:38 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:38 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 20:48:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 20:48:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 20:48:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 20:48:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 20:48:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:45:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:45:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:41 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:41 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:41 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:41 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:42 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:42 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:42 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:45:42 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:42 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:45:42 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:45:42 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:53 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:53 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:53 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:53 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:53 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:54 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:46:54 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:46:54 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:55 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:55 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:55 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:56 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:46:56 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:56 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:46:56 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:46:56 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:01 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:02 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:02 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:02 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:03 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:03 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:03 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:04 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:04 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:04 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:50:04 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:04 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:50:04 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:50:04 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:45 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:45 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 21:53:46 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:46 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:53:46 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:47 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:47 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:47 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:48 INFO  -  [Student Controller] Getting all students
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 21:53:48 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 21:53:48 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:37 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:38 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:39 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:39 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:39 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:40 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:02:40 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 22:02:40 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:14 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:14 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 1
+2022-11-11 22:03:14 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 2
+2022-11-11 22:03:14 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 3
+2022-11-11 22:03:14 INFO  -  [Relationship Controller] Getting relationships from teacher with the id 4
+2022-11-11 22:03:14 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 3
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 4
+2022-11-11 22:03:14 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 2
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 5
+2022-11-11 22:03:14 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 1
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting the student with the id 6
+2022-11-11 22:03:14 INFO  -  [Teacher Controller] Getting teacher with id 4
+2022-11-11 22:03:14 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:14 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting all teachers
+2022-11-11 22:03:15 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:15 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:15 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:15 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting all relationships
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:16 INFO  -  [Student Controller] Getting all students
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting relationships from student with the id 1
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 3
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting relationships from student with the id 2
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting relationships from student with the id 3
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting relationships from student with the id 4
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 2
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting relationships from student with the id 5
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 1
+2022-11-11 22:03:16 INFO  -  [Relationship Controller] Getting relationships from student with the id 6
+2022-11-11 22:03:16 INFO  -  [Teacher Controller] Getting teacher with id 3

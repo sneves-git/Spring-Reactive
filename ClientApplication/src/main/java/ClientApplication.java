@@ -7,10 +7,13 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+import reactor.util.retry.Retry;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -29,7 +32,9 @@ public class ClientApplication {
         Flux<Student> allStudents = client.get().uri("localhost:8080/student/all")
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
-                .bodyToFlux(Student.class);
+                .bodyToFlux(Student.class)
+                .retryWhen(Retry.fixedDelay(3, Duration.ofSeconds(4)));
+
         // 1. Names and birthdates of all students.
         System.out.println("\n===== Names And Birthdays From All Students =====");
         allStudents.doOnNext(cr -> System.out.println("-> Name: " + cr.getName() + " Birthday: " + cr.getBirth_date()))
@@ -52,9 +57,11 @@ public class ClientApplication {
 
         // 4. Total number of courses completed for all students, knowing that each course is
         //worth 6 credits.
-        System.out.println("\n===== Number Of Completed Courses From Each Student =====");
-        allStudents.doOnNext(cr -> System.out.println("Name: " + cr.getName() + " || Completed Courses:" + cr.getCompleted_credits() / 6))
-                .blockLast();
+        System.out.println("\n===== Number Of Completed Courses From all Student =====");
+        allStudents.map(cr -> (cr.getCompleted_credits() / 6))
+                .reduce(Integer::sum)
+                .doOnNext(System.out::println)
+                .block();
 
 
         // 5. Data of students that are in the last year of their graduation (i.e., whose credits
@@ -64,7 +71,7 @@ public class ClientApplication {
         System.out.println("\n===== Students that are in the last year =====");
         allStudents.filter(s -> (s.getCompleted_credits() >= 120 && s.getCompleted_credits() < 180))
                 .sort((a, b) -> b.getCompleted_credits().compareTo(a.getCompleted_credits()))
-                .doOnNext(cr -> System.out.println("-> Name: " + cr.getName() + " || Completed Courses:" + cr.getCompleted_credits() / 6))
+                .doOnNext(cr -> System.out.println("-> Name: " + cr.getName() + " || Completed Courses:" + (cr.getCompleted_credits() / 6)))
                 .blockLast();
 
 
@@ -173,6 +180,7 @@ public class ClientApplication {
                     }).blockLast();
                     return ids;
                 }).sort((a, b) -> Objects.requireNonNull(b.get().count().block()).compareTo(Objects.requireNonNull(a.get().count().block())))
+                .publishOn(Schedulers.boundedElastic())
                 .doOnNext(cr -> {
                     System.out.print("\nProfessor: ");
                     client.get().uri("localhost:8080/teacher/" + cr.get().take(1).blockLast())
@@ -233,9 +241,11 @@ public class ClientApplication {
                             .blockLast();
                 })
                 .blockLast();
-        System.out.println("tempo NORMAL: " + (System.currentTimeMillis() - begin));
-        System.out.println("Tempo do programa inteiro: " + (System.currentTimeMillis() - beginTime));
-        
+        System.out.println("Time from experiment 1: " + (System.currentTimeMillis() - begin));
+        System.out.println("Time from all client functionalities: " + (System.currentTimeMillis() - beginTime));
+
+
+
         // 11 Extra. Complete	data of all	students, by adding	the	names of their professors.
         begin = System.currentTimeMillis();
 
@@ -272,14 +282,14 @@ public class ClientApplication {
                             }).block();
                 })
                 .blockLast();
-        System.out.println("tempo EXTRA1: " + (System.currentTimeMillis() - begin));
+        System.out.println("Time from experiment 2: " + (System.currentTimeMillis() - begin));
 
 
         // 11 Extra. Complete	data of all	students, by adding	the	names of their professors.
         begin = System.currentTimeMillis();
 
         System.out.println("\n===== Complete data of all students EXTRA =====");
-       allStudents.publishOn(Schedulers.boundedElastic())
+        allStudents.publishOn(Schedulers.boundedElastic())
                 .doOnNext(s -> {
                     System.out.println("\nName: " + s.getName() +
                             " || Birthday: " + s.getBirth_date() +
@@ -305,7 +315,38 @@ public class ClientApplication {
                             .blockLast();
                 })
                 .blockLast();
-        System.out.println("tempo EXTRA2: " + (System.currentTimeMillis() - begin));
+        System.out.println("Time from experiment 3: " + (System.currentTimeMillis() - begin));
+        begin = System.currentTimeMillis();
+
+        List<Student> list1 = allStudents.collectList().block();
+        assert list1 != null;
+        for (Student s : list1) {
+            System.out.println("\nName: " + s.getName() +
+                    " || Birthday: " + s.getBirth_date() +
+                    " || Completed credits: " + s.getCompleted_credits() +
+                    " || Average grade: " + s.getAverage_grade() +
+                    "\nTeachers:");
+            Flux<Teacher_student> relationship = client.get().uri("localhost:8080/relationship/student/" + s.getId())
+                    .accept(MediaType.TEXT_EVENT_STREAM)
+                    .retrieve()
+                    .bodyToFlux(Teacher_student.class);
+            List<Teacher_student> list2 = relationship.collectList().block();
+            assert list2 != null;
+            if (!list2.isEmpty()) {
+                for (Teacher_student relation : list2) {
+                    client.get().uri("localhost:8080/teacher/" + relation.getTeacher_id())
+                            .accept(MediaType.TEXT_EVENT_STREAM)
+                            .retrieve()
+                            .bodyToFlux(Teacher.class)
+                            .doOnNext(t -> System.out.println(" - " + t.getName()))
+                            .blockLast();
+                }
+            }else{
+                System.out.println("No Professors");
+            }
+        }
+        System.out.println("Time from experiment 4: " + (System.currentTimeMillis() - begin));
+
 
     }
 
